@@ -73,7 +73,7 @@ data:
   default__features__surcharge: "true"
   default__features__system_metrics: "false"
   default__features__tax_processors: "true"
-  default__features__tenant_user: "true"
+  default__features__tenant_user: change after pr1
   default__features__test_live_toggle: "false"
   default__features__test_processors: "true"
   default__features__threeds_authenticator: "true"
@@ -168,7 +168,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: e19c37af62199232b07343b65e5ae7197dcf9edb985af7b1f6e9aa7abf9d1c04
+        checksum/config: 9eefe0a65432c1da7a3be13a688eecc18bb0c374833ecd130f84a7f49093c2cd
       labels:
         app: hyperswitch-control-center
         app.kubernetes.io/instance: test-control-center-hydrator
