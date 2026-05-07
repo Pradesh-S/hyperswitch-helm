@@ -1,6 +1,6 @@
 {
   "repoURL": "git@github.com:Pradesh-S/hyperswitch-helm.git",
-  "drySha": "4870867a3cb07f01f183c14000d424f1ebee4ebc",
+  "drySha": "e849da104136ddd70643b11553762efc8913355c",
   "commands": [
     "helm template . --name-template control-center-staging --include-crds"
   ]

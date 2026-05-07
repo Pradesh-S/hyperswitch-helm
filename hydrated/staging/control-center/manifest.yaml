@@ -73,7 +73,7 @@ data:
   default__features__surcharge: "true"
   default__features__system_metrics: "false"
   default__features__tax_processors: "true"
-  default__features__tenant_user: "true"
+  default__features__tenant_user: change after pr1
   default__features__test_live_toggle: "false"
   default__features__test_processors: "true"
   default__features__threeds_authenticator: "true"
@@ -168,7 +168,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: a7fda7c6f1cf9a1a40a9ba1d9184952fd7ee7ee7e2a3b7a9c7571d799d8f98e7
+        checksum/config: 87a6e6d6a30c0117b3aa75bb6e82b07f6e7f4cfd0d7240efe6446bb685e8a426
       labels:
         app: hyperswitch-control-center
         app.kubernetes.io/instance: control-center-staging
