@@ -1,0 +1,227 @@
+apiVersion: v1
+automountServiceAccountToken: true
+kind: ServiceAccount
+metadata:
+  annotations:
+    argocd.argoproj.io/tracking-id: test-control-center-hydrator-version-10:/ServiceAccount:argocd/test-control-center-hydrator-version-10-hyperswitch-control-cen
+  labels:
+    app: hyperswitch-control-center
+    app.kubernetes.io/instance: test-control-center-hydrator-version-10
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: v1.38.2
+    helm.sh/chart: hyperswitch-control-center-1.1.0
+  name: test-control-center-hydrator-version-10-hyperswitch-control-cen
+  namespace: argocd
+---
+apiVersion: v1
+data:
+  apiBaseUrl: http://localhost:8080
+  binary: dashboard
+  default__endpoints__agreement_url: https://app.hyperswitch.io/agreement/tc-hyperswitch-aug-23.pdf
+  default__endpoints__agreement_version: 1.0.0
+  default__endpoints__api_url: http://localhost:8080
+  default__endpoints__apple_pay_certificate_url: http://localhost:8080/applepay-domain/apple-developer-merchantid-domain-association
+  default__endpoints__dss_certificate_url: https://app.hyperswitch.io/certificates/PCI_DSS_v4-0_AOC_Juspay_2024.pdf
+  default__endpoints__favicon_url: ""
+  default__endpoints__hypersense_url: ""
+  default__endpoints__logo_url: ""
+  default__endpoints__mixpanel_token: dd4da7f62941557e716fbc0a19f9cc7e
+  default__endpoints__recon_iframe_url: ""
+  default__endpoints__sdk_url: http://localhost:9050/web/0.126.0/v1/HyperLoader.js
+  default__features__audit_trail: "false"
+  default__features__authentication_analytics: "false"
+  default__features__branding: "false"
+  default__features__compliance_certificate: "true"
+  default__features__configure_pmts: "true"
+  default__features__custom_webhook_headers: "false"
+  default__features__dev_alt_payment_methods: "false"
+  default__features__dev_click_to_pay: "true"
+  default__features__dev_debit_routing: "false"
+  default__features__dev_hypersense_v2_product: "false"
+  default__features__dev_intelligent_routing_v2: "false"
+  default__features__dev_modularity_v2: "false"
+  default__features__dev_recon_v2_product: "false"
+  default__features__dev_recovery_v2_product: "false"
+  default__features__dev_vault_v2_product: "false"
+  default__features__dev_webhooks: change after pr 2
+  default__features__dispute_analytics: "false"
+  default__features__dispute_evidence_upload: "false"
+  default__features__down_time: "false"
+  default__features__email: "true"
+  default__features__feedback: "false"
+  default__features__force_cookies: "false"
+  default__features__frm: "true"
+  default__features__generate_report: "true"
+  default__features__global_search: "true"
+  default__features__global_search_filters: "false"
+  default__features__granularity: "false"
+  default__features__is_live_mode: "false"
+  default__features__live_users_counter: "false"
+  default__features__maintainence_alert: ""
+  default__features__mixpanel: "false"
+  default__features__new_analytics: "true"
+  default__features__new_analytics_filters: "true"
+  default__features__new_analytics_refunds: change after pr
+  default__features__new_analytics_smart_retries: "true"
+  default__features__payout: "true"
+  default__features__performance_monitor: "true"
+  default__features__pm_authentication_processor: "true"
+  default__features__quick_start: "true"
+  default__features__recon: "true"
+  default__features__recon_v2: "false"
+  default__features__sample_data: "true"
+  default__features__surcharge: "true"
+  default__features__system_metrics: "false"
+  default__features__tax_processors: "true"
+  default__features__tenant_user: change after pr1
+  default__features__test_live_toggle: "false"
+  default__features__test_processors: "true"
+  default__features__threeds_authenticator: "true"
+  default__features__totp: "false"
+  default__features__transaction_view: "true"
+  default__features__user_journey_analytics: "false"
+  default__merchant_config__new_analytics__merchant_ids: ""
+  default__merchant_config__new_analytics__org_ids: ""
+  default__merchant_config__new_analytics__profile_ids: ""
+  default__theme__primary_color: '#006DF9'
+  default__theme__primary_hover_color: '#005ED6'
+  default__theme__sidebar_border_color: '#ECEFF3'
+  default__theme__sidebar_color: '#242F48'
+  default__theme__sidebar_primary: '#FCFCFD'
+  default__theme__sidebar_primary_text_color: '#1C6DEA'
+  default__theme__sidebar_secondary: '#FFFFFF'
+  default__theme__sidebar_secondary_text_color: '#525866'
+  mixpanelToken: dd4da7f62941557e716fbc0a19f9cc7e
+  sdkBaseUrl: http://localhost:9050/web/0.126.0/v1/HyperLoader.js
+kind: ConfigMap
+metadata:
+  annotations:
+    argocd.argoproj.io/tracking-id: test-control-center-hydrator-version-10:/ConfigMap:argocd/test-control-center-hydrator-version-10-hyperswitch-control-cen
+  labels:
+    app: hyperswitch-control-center
+    app.kubernetes.io/instance: test-control-center-hydrator-version-10
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: v1.38.2
+    helm.sh/chart: hyperswitch-control-center-1.1.0
+  name: test-control-center-hydrator-version-10-hyperswitch-control-cen
+  namespace: argocd
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    argocd.argoproj.io/tracking-id: test-control-center-hydrator-version-10:/Service:argocd/test-control-center-hydrator-version-10-hyperswitch-control-cen
+  labels:
+    app: hyperswitch-control-center
+    app.kubernetes.io/instance: test-control-center-hydrator-version-10
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: v1.38.2
+    helm.sh/chart: hyperswitch-control-center-1.1.0
+  name: test-control-center-hydrator-version-10-hyperswitch-control-cen
+  namespace: argocd
+spec:
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 9000
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 9000
+  selector:
+    app: hyperswitch-control-center
+    app.kubernetes.io/instance: test-control-center-hydrator-version-10
+  sessionAffinity: None
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    argocd.argoproj.io/tracking-id: test-control-center-hydrator-version-10:apps/Deployment:argocd/test-control-center-hydrator-version-10-hyperswitch-control-cen
+  labels:
+    app: hyperswitch-control-center
+    app.kubernetes.io/instance: test-control-center-hydrator-version-10
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/version: v1.38.2
+    helm.sh/chart: hyperswitch-control-center-1.1.0
+  name: test-control-center-hydrator-version-10-hyperswitch-control-cen
+  namespace: argocd
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: hyperswitch-control-center
+      app.kubernetes.io/instance: test-control-center-hydrator-version-10
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        checksum/config: f973e6dffe42d38c8e32f7847e4321fa283f768b5025cf67f736de0ff0415583
+      labels:
+        app: hyperswitch-control-center
+        app.kubernetes.io/instance: test-control-center-hydrator-version-10
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/version: v1.38.2
+        helm.sh/chart: hyperswitch-control-center-1.1.0
+    spec:
+      containers:
+        - envFrom:
+            - configMapRef:
+                name: test-control-center-hydrator-version-10-hyperswitch-control-cen
+          image: docker.juspay.io/juspaydotin/hyperswitch-control-center:v1.38.2
+          imagePullPolicy: IfNotPresent
+          lifecycle:
+            preStop:
+              exec:
+                command:
+                  - /bin/bash
+                  - -c
+                  - pkill -15 node
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            timeoutSeconds: 5
+          name: hyperswitch-control-center
+          ports:
+            - containerPort: 9000
+              name: http
+              protocol: TCP
+          readinessProbe:
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 3
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          securityContext:
+            privileged: false
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      serviceAccountName: test-control-center-hydrator-version-10-hyperswitch-control-cen
+      terminationGracePeriodSeconds: 30
