@@ -43,7 +43,7 @@ data:
   default__features__dev_recon_v2_product: "false"
   default__features__dev_recovery_v2_product: "false"
   default__features__dev_vault_v2_product: "false"
-  default__features__dev_webhooks: "false"
+  default__features__dev_webhooks: change after pr 2
   default__features__dispute_analytics: "false"
   default__features__dispute_evidence_upload: "false"
   default__features__down_time: "false"
@@ -168,7 +168,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: 3d18e28ff083fe8e5fbb711be60a9a1dca850b34c4434815b26a2e31c74e0806
+        checksum/config: 3bcc934b332d3a1cd31d8d8395d64b9d1da981f5970619acf782e02e3f7dd6de
       labels:
         app: hyperswitch-control-center
         app.kubernetes.io/instance: test-control-center-hydrator-simple
