@@ -195,7 +195,7 @@ config:
       dev_recon_v2_product: false
       dev_recovery_v2_product: false
       dev_vault_v2_product: false
-      dev_webhooks: false
+      dev_webhooks: "change after pr 2"
       # Other features
       dispute_analytics: "false"
       dispute_evidence_upload: "false"
