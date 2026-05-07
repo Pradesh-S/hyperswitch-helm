@@ -3,14 +3,14 @@ automountServiceAccountToken: true
 kind: ServiceAccount
 metadata:
   annotations:
-    argocd.argoproj.io/tracking-id: test-control-center-hydrator:/ServiceAccount:argocd/test-control-center-hydrator-hyperswitch-control-center
+    argocd.argoproj.io/tracking-id: control-center-production:/ServiceAccount:argocd/control-center-production-hyperswitch-control-center
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: test-control-center-hydrator
+    app.kubernetes.io/instance: control-center-production
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: test-control-center-hydrator-hyperswitch-control-center
+  name: control-center-production-hyperswitch-control-center
   namespace: argocd
 ---
 apiVersion: v1
@@ -96,28 +96,28 @@ data:
 kind: ConfigMap
 metadata:
   annotations:
-    argocd.argoproj.io/tracking-id: test-control-center-hydrator:/ConfigMap:argocd/test-control-center-hydrator-hyperswitch-control-center
+    argocd.argoproj.io/tracking-id: control-center-production:/ConfigMap:argocd/control-center-production-hyperswitch-control-center
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: test-control-center-hydrator
+    app.kubernetes.io/instance: control-center-production
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: test-control-center-hydrator-hyperswitch-control-center
+  name: control-center-production-hyperswitch-control-center
   namespace: argocd
 ---
 apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    argocd.argoproj.io/tracking-id: test-control-center-hydrator:/Service:argocd/test-control-center-hydrator-hyperswitch-control-center
+    argocd.argoproj.io/tracking-id: control-center-production:/Service:argocd/control-center-production-hyperswitch-control-center
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: test-control-center-hydrator
+    app.kubernetes.io/instance: control-center-production
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: test-control-center-hydrator-hyperswitch-control-center
+  name: control-center-production-hyperswitch-control-center
   namespace: argocd
 spec:
   internalTrafficPolicy: Cluster
@@ -135,7 +135,7 @@ spec:
       targetPort: 9000
   selector:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: test-control-center-hydrator
+    app.kubernetes.io/instance: control-center-production
   sessionAffinity: None
   type: ClusterIP
 ---
@@ -143,14 +143,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    argocd.argoproj.io/tracking-id: test-control-center-hydrator:apps/Deployment:argocd/test-control-center-hydrator-hyperswitch-control-center
+    argocd.argoproj.io/tracking-id: control-center-production:apps/Deployment:argocd/control-center-production-hyperswitch-control-center
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: test-control-center-hydrator
+    app.kubernetes.io/instance: control-center-production
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: test-control-center-hydrator-hyperswitch-control-center
+  name: control-center-production-hyperswitch-control-center
   namespace: argocd
 spec:
   progressDeadlineSeconds: 600
@@ -159,7 +159,7 @@ spec:
   selector:
     matchLabels:
       app: hyperswitch-control-center
-      app.kubernetes.io/instance: test-control-center-hydrator
+      app.kubernetes.io/instance: control-center-production
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -168,10 +168,10 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: e19c37af62199232b07343b65e5ae7197dcf9edb985af7b1f6e9aa7abf9d1c04
+        checksum/config: 740a72908a90980f27322ec9b4593eec80793b7324ddbd9b3ab39880293172ed
       labels:
         app: hyperswitch-control-center
-        app.kubernetes.io/instance: test-control-center-hydrator
+        app.kubernetes.io/instance: control-center-production
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: v1.38.2
         helm.sh/chart: hyperswitch-control-center-1.1.0
@@ -179,7 +179,7 @@ spec:
       containers:
         - envFrom:
             - configMapRef:
-                name: test-control-center-hydrator-hyperswitch-control-center
+                name: control-center-production-hyperswitch-control-center
           image: docker.juspay.io/juspaydotin/hyperswitch-control-center:v1.38.2
           imagePullPolicy: IfNotPresent
           lifecycle:
@@ -223,5 +223,5 @@ spec:
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
-      serviceAccountName: test-control-center-hydrator-hyperswitch-control-center
+      serviceAccountName: control-center-production-hyperswitch-control-center
       terminationGracePeriodSeconds: 30
