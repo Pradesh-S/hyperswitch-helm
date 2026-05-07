@@ -43,7 +43,7 @@ data:
   default__features__dev_recon_v2_product: "false"
   default__features__dev_recovery_v2_product: "false"
   default__features__dev_vault_v2_product: "false"
-  default__features__dev_webhooks: "false"
+  default__features__dev_webhooks: change after pr 2
   default__features__dispute_analytics: "false"
   default__features__dispute_evidence_upload: "false"
   default__features__down_time: "false"
@@ -168,7 +168,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: 91247843e5ec9a1a7eabb088d87d3c4486fd09c243711021e0fc20a136524579
+        checksum/config: 0c50aa78562f1beaa12eea9e0ddbec190d842f66041883ed63994b750353f3d8
       labels:
         app: hyperswitch-control-center
         app.kubernetes.io/instance: control-center-production
