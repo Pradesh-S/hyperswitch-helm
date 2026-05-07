@@ -1,0 +1,7 @@
+{
+  "repoURL": "git@github.com:Pradesh-S/hyperswitch-helm.git",
+  "drySha": "e1cfdbffec82468a177949a9bf9e9fe1cbff2f4e",
+  "author": "Pradesh-S <pradesh.s@juspay.in>",
+  "date": "2026-04-29T12:16:06Z",
+  "subject": "chore( hyperswitch-app - cronjob ): remove the activeDeadlineSeconds and backoffLimit fields from the superposition-fallback cronjob (#292)"
+}
