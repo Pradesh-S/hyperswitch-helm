@@ -1,4 +1,4 @@
 helm:
   valueFiles:
-    - ../../../infra-configurations/sandbox-values.yaml
-    - ../../../deployment-configs/sandbox-values.yaml
+    - ../../../infra-configurations/prod-values.yaml
+    - ../../../deployment-configs/prod-values.yaml
