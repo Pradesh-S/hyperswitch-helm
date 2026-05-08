@@ -1,7 +1,7 @@
 {
   "repoURL": "git@github.com:Pradesh-S/hyperswitch-helm.git",
-  "drySha": "7a42105b31f4c23a81f3f16d467adae943cea22c",
+  "drySha": "0b37a710a83a2a99bca9ea721c781363736c9fec",
   "author": "Pradesh-S <pradesh.s@juspay.in>",
-  "date": "2026-05-08T10:10:46Z",
-  "subject": "Update maintainence_alert source in sandbox-values.yaml"
+  "date": "2026-05-08T11:54:10Z",
+  "subject": "Update feature descriptions in sandbox-values.yaml"
 }
