@@ -1,4 +1,0 @@
-helm:
-  valueFiles:
-    - ../../../infra-configurations/sandbox-values.yaml
-    - ../../../deployment-configs/sandbox-values.yaml
