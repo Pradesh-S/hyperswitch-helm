@@ -1,7 +1,7 @@
 {
   "repoURL": "git@github.com:Pradesh-S/hyperswitch-helm.git",
-  "drySha": "3458b6e274c6dc465d6248a7be6edb62544bea98",
+  "drySha": "b04b4e720e4ba7e2f6adabf8d3930b992a714ae1",
   "author": "Pradesh-S <pradesh.s@juspay.in>",
-  "date": "2026-05-08T09:44:44Z",
-  "subject": "Add ArgoCD source configuration for control center"
+  "date": "2026-05-08T10:09:02Z",
+  "subject": "Update .argocd-source.yaml"
 }
