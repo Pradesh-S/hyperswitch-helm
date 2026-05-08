@@ -1,5 +1,0 @@
-config:
-  default:
-      features:
-        new_analytics_refunds: "from deployment-values file"
-        maintainence_alert: "from infra-values file"
