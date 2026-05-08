@@ -1,0 +1,7 @@
+{
+  "repoURL": "git@github.com:Pradesh-S/hyperswitch-helm.git",
+  "drySha": "dacc3af7b8cb0e7c2b4531cf5cb4ae25af022bb3",
+  "author": "Pradesh-S <pradesh.s@juspay.in>",
+  "date": "2026-05-08T07:44:43Z",
+  "subject": "Add helm-sandbox-values.yaml with config settings"
+}
