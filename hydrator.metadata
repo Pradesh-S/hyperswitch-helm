@@ -1,0 +1,7 @@
+{
+  "repoURL": "git@github.com:Pradesh-S/hyperswitch-helm.git",
+  "drySha": "01ad69bf65d23fd6e55f64c6046599e46a4f5d26",
+  "author": "Pradesh-S <pradesh.s@juspay.in>",
+  "date": "2026-05-08T12:54:52Z",
+  "subject": "Update ArgoCD source values for production"
+}
