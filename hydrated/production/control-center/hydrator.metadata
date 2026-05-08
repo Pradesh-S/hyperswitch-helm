@@ -1,7 +1,7 @@
 {
   "repoURL": "git@github.com:Pradesh-S/hyperswitch-helm.git",
-  "drySha": "f36c098ac27eb483d68149943a672497541ecfd9",
+  "drySha": "3458b6e274c6dc465d6248a7be6edb62544bea98",
   "commands": [
-    "helm template . --name-template control-center-production --include-crds"
+    "helm template . --name-template sandbox-control-center --values ./charts/incubator/hyperswitch-control-center/helm-sandox-values.yaml --include-crds"
   ]
 }

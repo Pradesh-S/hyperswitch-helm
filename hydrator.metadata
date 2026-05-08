@@ -1,8 +1,7 @@
 {
   "repoURL": "git@github.com:Pradesh-S/hyperswitch-helm.git",
-  "drySha": "f36c098ac27eb483d68149943a672497541ecfd9",
+  "drySha": "3458b6e274c6dc465d6248a7be6edb62544bea98",
   "author": "Pradesh-S <pradesh.s@juspay.in>",
-  "date": "2026-05-07T14:12:42Z",
-  "subject": "Merge pull request #4 from Pradesh-S/hydrate-test-pr-2",
-  "body": "Update dev_webhooks value in values.yaml\n"
+  "date": "2026-05-08T09:44:44Z",
+  "subject": "Add ArgoCD source configuration for control center"
 }
