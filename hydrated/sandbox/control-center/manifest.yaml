@@ -3,14 +3,14 @@ automountServiceAccountToken: true
 kind: ServiceAccount
 metadata:
   annotations:
-    argocd.argoproj.io/tracking-id: test-control-center-hydrator-version-10g:/ServiceAccount:argocd/sandbox-control-center-hyperswitch-control-center
+    argocd.argoproj.io/tracking-id: test-control-center-hydrator-version-10g:/ServiceAccount:argocd/test-control-center-hydrator-version-10g-hyperswitch-control-ce
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: sandbox-control-center
+    app.kubernetes.io/instance: test-control-center-hydrator-version-10g
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: sandbox-control-center-hyperswitch-control-center
+  name: test-control-center-hydrator-version-10g-hyperswitch-control-ce
   namespace: argocd
 ---
 apiVersion: v1
@@ -96,28 +96,28 @@ data:
 kind: ConfigMap
 metadata:
   annotations:
-    argocd.argoproj.io/tracking-id: test-control-center-hydrator-version-10g:/ConfigMap:argocd/sandbox-control-center-hyperswitch-control-center
+    argocd.argoproj.io/tracking-id: test-control-center-hydrator-version-10g:/ConfigMap:argocd/test-control-center-hydrator-version-10g-hyperswitch-control-ce
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: sandbox-control-center
+    app.kubernetes.io/instance: test-control-center-hydrator-version-10g
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: sandbox-control-center-hyperswitch-control-center
+  name: test-control-center-hydrator-version-10g-hyperswitch-control-ce
   namespace: argocd
 ---
 apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    argocd.argoproj.io/tracking-id: test-control-center-hydrator-version-10g:/Service:argocd/sandbox-control-center-hyperswitch-control-center
+    argocd.argoproj.io/tracking-id: test-control-center-hydrator-version-10g:/Service:argocd/test-control-center-hydrator-version-10g-hyperswitch-control-ce
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: sandbox-control-center
+    app.kubernetes.io/instance: test-control-center-hydrator-version-10g
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: sandbox-control-center-hyperswitch-control-center
+  name: test-control-center-hydrator-version-10g-hyperswitch-control-ce
   namespace: argocd
 spec:
   internalTrafficPolicy: Cluster
@@ -135,7 +135,7 @@ spec:
       targetPort: 9000
   selector:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: sandbox-control-center
+    app.kubernetes.io/instance: test-control-center-hydrator-version-10g
   sessionAffinity: None
   type: ClusterIP
 ---
@@ -143,14 +143,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
-    argocd.argoproj.io/tracking-id: test-control-center-hydrator-version-10g:apps/Deployment:argocd/sandbox-control-center-hyperswitch-control-center
+    argocd.argoproj.io/tracking-id: test-control-center-hydrator-version-10g:apps/Deployment:argocd/test-control-center-hydrator-version-10g-hyperswitch-control-ce
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: sandbox-control-center
+    app.kubernetes.io/instance: test-control-center-hydrator-version-10g
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: sandbox-control-center-hyperswitch-control-center
+  name: test-control-center-hydrator-version-10g-hyperswitch-control-ce
   namespace: argocd
 spec:
   progressDeadlineSeconds: 600
@@ -159,7 +159,7 @@ spec:
   selector:
     matchLabels:
       app: hyperswitch-control-center
-      app.kubernetes.io/instance: sandbox-control-center
+      app.kubernetes.io/instance: test-control-center-hydrator-version-10g
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -168,10 +168,10 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: 1e56755512e218bffe96a5eed3c6a456793849a8c8a34e81095a59053f40404f
+        checksum/config: f58d6cacd1a4034c7f4f075598af6d69e0bbdc89e01826762b5c5b55b7e7b860
       labels:
         app: hyperswitch-control-center
-        app.kubernetes.io/instance: sandbox-control-center
+        app.kubernetes.io/instance: test-control-center-hydrator-version-10g
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: v1.38.2
         helm.sh/chart: hyperswitch-control-center-1.1.0
@@ -179,7 +179,7 @@ spec:
       containers:
         - envFrom:
             - configMapRef:
-                name: sandbox-control-center-hyperswitch-control-center
+                name: test-control-center-hydrator-version-10g-hyperswitch-control-ce
           image: docker.juspay.io/juspaydotin/hyperswitch-control-center:v1.38.2
           imagePullPolicy: IfNotPresent
           lifecycle:
@@ -223,5 +223,5 @@ spec:
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
-      serviceAccountName: sandbox-control-center-hyperswitch-control-center
+      serviceAccountName: test-control-center-hydrator-version-10g-hyperswitch-control-ce
       terminationGracePeriodSeconds: 30
