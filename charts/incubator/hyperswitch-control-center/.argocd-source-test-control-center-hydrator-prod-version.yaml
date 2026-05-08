@@ -1,4 +1,0 @@
-helm:
-  valueFiles:
-    - ../../../infra-configurations/prod-values.yaml
-    - ../../../deployment-configs/prod-values.yaml
