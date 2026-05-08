@@ -1,7 +1,7 @@
 {
   "repoURL": "git@github.com:Pradesh-S/hyperswitch-helm.git",
-  "drySha": "3458b6e274c6dc465d6248a7be6edb62544bea98",
+  "drySha": "7a42105b31f4c23a81f3f16d467adae943cea22c",
   "author": "Pradesh-S <pradesh.s@juspay.in>",
-  "date": "2026-05-08T09:44:44Z",
-  "subject": "Add ArgoCD source configuration for control center"
+  "date": "2026-05-08T10:10:46Z",
+  "subject": "Update maintainence_alert source in sandbox-values.yaml"
 }
