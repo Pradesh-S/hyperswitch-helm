@@ -1,7 +1,7 @@
 {
   "repoURL": "git@github.com:Pradesh-S/hyperswitch-helm.git",
-  "drySha": "fe82825cbcdf64f3daf3398ecaa7775f8df057b1",
+  "drySha": "dc2bfc1cd08b5c5c29dd0c11ddc33446e709a0bf",
   "author": "Pradesh-S <pradesh.s@juspay.in>",
-  "date": "2026-05-08T13:22:02Z",
-  "subject": "Add .argocd-source-test-control-center-hydrator-sandbox-version.yaml"
+  "date": "2026-05-08T14:13:34Z",
+  "subject": "Delete charts/incubator/hyperswitch-control-center/.argocd-source-test-control-center-hydrator-sandbox-version.yaml"
 }

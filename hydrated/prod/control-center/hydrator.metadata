@@ -1,7 +1,7 @@
 {
   "repoURL": "git@github.com:Pradesh-S/hyperswitch-helm.git",
-  "drySha": "fe82825cbcdf64f3daf3398ecaa7775f8df057b1",
+  "drySha": "dc2bfc1cd08b5c5c29dd0c11ddc33446e709a0bf",
   "commands": [
-    "helm template . --name-template test-control-center-hydrator-prod-version --values ./infra-configurations/prod-values.yaml --values ./deployment-configs/prod-values.yaml --include-crds"
+    "helm template . --name-template test-control-center-hydrator-prod-version --namespace hyperswitch-prod --values ./charts/incubator/hyperswitch-control-center/helm-sandbox-values.yaml --include-crds"
   ]
 }
