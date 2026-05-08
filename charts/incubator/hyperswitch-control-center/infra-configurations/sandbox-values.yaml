@@ -1,5 +1,0 @@
-config:
-  default:
-      features:
-        new_analytics_refunds: "from infra-values file - charts/incubator/hyperswitch-control-center/infra-configurations/sandbox-values.yaml"
-        maintainence_alert: "from infra-values file - charts/incubator/hyperswitch-control-center/infra-configurations/sandbox-values.yaml"
