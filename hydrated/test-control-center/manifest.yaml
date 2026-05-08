@@ -57,11 +57,11 @@ data:
   default__features__granularity: "false"
   default__features__is_live_mode: "false"
   default__features__live_users_counter: "false"
-  default__features__maintainence_alert: from deployment-values file - deployment-configs/prod-values.yaml
+  default__features__maintainence_alert: ""
   default__features__mixpanel: "false"
   default__features__new_analytics: "true"
   default__features__new_analytics_filters: "true"
-  default__features__new_analytics_refunds: from deployment-values file - deployment-configs/prod-values.yaml
+  default__features__new_analytics_refunds: change after pr
   default__features__new_analytics_smart_retries: "true"
   default__features__payout: "true"
   default__features__performance_monitor: "true"
@@ -168,7 +168,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: 08ee44a67c9f68b398196eb7ae517d4594699abfd57728e2da2043596fc36023
+        checksum/config: 85b695cd601093fc6af15cd974e0625233755bdb47100cbb961a0bb88d8e1d1e
       labels:
         app: hyperswitch-control-center
         app.kubernetes.io/instance: test-control-center-hydrator
