@@ -1,4 +1,4 @@
 helm:
-  releaseName: sandbox-control-center
   valueFiles:
-    - helm-sandox-values.yaml
+    - infra-configurations/sandbox-values.yaml
+    - deployment-configs/sandbox-values.yaml
