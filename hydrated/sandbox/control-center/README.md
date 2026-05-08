@@ -5,6 +5,6 @@ To hydrate the manifests in this repository, run the following commands:
 ```shell
 git clone git@github.com:Pradesh-S/hyperswitch-helm.git
 # cd into the cloned directory
-git checkout 01ad69bf65d23fd6e55f64c6046599e46a4f5d26
-helm template . --name-template test-control-center-hydrator-version-10-prod --values ./infra-configurations/prod-values.yaml --values ./deployment-configs/prod-values.yaml --include-crds
+git checkout 2302970e2c057a5cf790d3e3e88aac0daa595673
+helm template . --name-template test-control-center-hydrator-version-10-prod --include-crds
 ```
