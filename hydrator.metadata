@@ -1,0 +1,7 @@
+{
+  "repoURL": "git@github.com:Pradesh-S/hyperswitch-helm.git",
+  "drySha": "3458b6e274c6dc465d6248a7be6edb62544bea98",
+  "author": "Pradesh-S <pradesh.s@juspay.in>",
+  "date": "2026-05-08T09:44:44Z",
+  "subject": "Add ArgoCD source configuration for control center"
+}
