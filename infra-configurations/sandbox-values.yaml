@@ -3,3 +3,4 @@ config:
       features:
         new_analytics_refunds: "from infra-values file - infra-configurations/sandbox-values.yaml"
         maintainence_alert: "from infra-values file - infra-configurations/sandbox-values.yaml"
+        live_users_counter: "from infra-values file - infra-configurations/sandbox-values.yaml"
