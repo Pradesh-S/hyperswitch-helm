@@ -1,0 +1,7 @@
+{
+  "repoURL": "git@github.com:Pradesh-S/hyperswitch-helm.git",
+  "drySha": "39384384e8b036aa8da5fed727fb3a5ab61e38db",
+  "author": "Pradesh-S <pradesh.s@juspay.in>",
+  "date": "2026-05-11T07:09:19Z",
+  "subject": "Add live_users_counter to sandbox-values.yaml"
+}
