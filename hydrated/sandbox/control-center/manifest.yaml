@@ -54,12 +54,12 @@ data:
   default__features__global_search_filters: "false"
   default__features__granularity: "false"
   default__features__is_live_mode: "false"
-  default__features__live_users_counter: "false"
-  default__features__maintainence_alert: from infra-values file - infra-configurations/prod-values.yaml
+  default__features__live_users_counter: from infra-values file - infra-configurations/sandbox-values.yaml
+  default__features__maintainence_alert: from infra-values file - infra-configurations/sandbox-values.yaml
   default__features__mixpanel: "false"
   default__features__new_analytics: "true"
   default__features__new_analytics_filters: "true"
-  default__features__new_analytics_refunds: from infra-values file - infra-configurations/prod-values.yaml
+  default__features__new_analytics_refunds: from infra-values file - infra-configurations/sandbox-values.yaml
   default__features__new_analytics_smart_retries: "true"
   default__features__payout: "true"
   default__features__performance_monitor: "true"
@@ -160,7 +160,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: 0ee6f3c8b2199ba33a3585e85c2e3c6b449f2c376da8da0969c307e1175f92eb
+        checksum/config: 26a88bb33b22201f177e7f90a14af6281b8e5e200eed370266a2c9fea0182a7d
       labels:
         app: hyperswitch-control-center
         app.kubernetes.io/instance: test-control-center-hydrator-sandbox-version-123
