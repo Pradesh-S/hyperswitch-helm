@@ -5,6 +5,6 @@ To hydrate the manifests in this repository, run the following commands:
 ```shell
 git clone git@github.com:Pradesh-S/hyperswitch-helm.git
 # cd into the cloned directory
-git checkout ed1608099a28f75d4b83c1554591e5667c23b146
-helm template . --name-template control-center-staging --include-crds
+git checkout 39384384e8b036aa8da5fed727fb3a5ab61e38db
+helm template . --name-template staging-control-center --namespace hyperswitch-staging --include-crds
 ```

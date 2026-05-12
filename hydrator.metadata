@@ -1,7 +1,7 @@
 {
   "repoURL": "git@github.com:Pradesh-S/hyperswitch-helm.git",
-  "drySha": "ed1608099a28f75d4b83c1554591e5667c23b146",
+  "drySha": "39384384e8b036aa8da5fed727fb3a5ab61e38db",
   "author": "Pradesh-S <pradesh.s@juspay.in>",
-  "date": "2026-05-08T13:14:10Z",
-  "subject": "Delete charts/incubator/hyperswitch-control-center/infra-configurations directory"
+  "date": "2026-05-11T07:09:19Z",
+  "subject": "Add live_users_counter to sandbox-values.yaml"
 }

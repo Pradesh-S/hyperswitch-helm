@@ -2,16 +2,14 @@ apiVersion: v1
 automountServiceAccountToken: true
 kind: ServiceAccount
 metadata:
-  annotations:
-    argocd.argoproj.io/tracking-id: control-center-staging:/ServiceAccount:argocd/control-center-staging-hyperswitch-control-center
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: control-center-staging
+    app.kubernetes.io/instance: staging-control-center
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: control-center-staging-hyperswitch-control-center
-  namespace: argocd
+  name: staging-control-center-hyperswitch-control-center
+  namespace: hyperswitch-staging
 ---
 apiVersion: v1
 data:
@@ -95,30 +93,26 @@ data:
   sdkBaseUrl: http://localhost:9050/web/0.126.0/v1/HyperLoader.js
 kind: ConfigMap
 metadata:
-  annotations:
-    argocd.argoproj.io/tracking-id: control-center-staging:/ConfigMap:argocd/control-center-staging-hyperswitch-control-center
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: control-center-staging
+    app.kubernetes.io/instance: staging-control-center
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: control-center-staging-hyperswitch-control-center
-  namespace: argocd
+  name: staging-control-center-hyperswitch-control-center
+  namespace: hyperswitch-staging
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    argocd.argoproj.io/tracking-id: control-center-staging:/Service:argocd/control-center-staging-hyperswitch-control-center
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: control-center-staging
+    app.kubernetes.io/instance: staging-control-center
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: control-center-staging-hyperswitch-control-center
-  namespace: argocd
+  name: staging-control-center-hyperswitch-control-center
+  namespace: hyperswitch-staging
 spec:
   internalTrafficPolicy: Cluster
   ipFamilies:
@@ -135,23 +129,21 @@ spec:
       targetPort: 9000
   selector:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: control-center-staging
+    app.kubernetes.io/instance: staging-control-center
   sessionAffinity: None
   type: ClusterIP
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    argocd.argoproj.io/tracking-id: control-center-staging:apps/Deployment:argocd/control-center-staging-hyperswitch-control-center
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: control-center-staging
+    app.kubernetes.io/instance: staging-control-center
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: control-center-staging-hyperswitch-control-center
-  namespace: argocd
+  name: staging-control-center-hyperswitch-control-center
+  namespace: hyperswitch-staging
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -159,7 +151,7 @@ spec:
   selector:
     matchLabels:
       app: hyperswitch-control-center
-      app.kubernetes.io/instance: control-center-staging
+      app.kubernetes.io/instance: staging-control-center
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -168,10 +160,10 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: 3f716c853ac9f1e85ab64e23fec8469c0b0c6c9415bc9d3680305d7b3d992c24
+        checksum/config: b982cbfa1ba3e7dc7544d4692097374c5e0bde3ad3afb913de2382d36a820fb7
       labels:
         app: hyperswitch-control-center
-        app.kubernetes.io/instance: control-center-staging
+        app.kubernetes.io/instance: staging-control-center
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: v1.38.2
         helm.sh/chart: hyperswitch-control-center-1.1.0
@@ -179,7 +171,7 @@ spec:
       containers:
         - envFrom:
             - configMapRef:
-                name: control-center-staging-hyperswitch-control-center
+                name: staging-control-center-hyperswitch-control-center
           image: docker.juspay.io/juspaydotin/hyperswitch-control-center:v1.38.2
           imagePullPolicy: IfNotPresent
           lifecycle:
@@ -223,5 +215,5 @@ spec:
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
-      serviceAccountName: control-center-staging-hyperswitch-control-center
+      serviceAccountName: staging-control-center-hyperswitch-control-center
       terminationGracePeriodSeconds: 30
