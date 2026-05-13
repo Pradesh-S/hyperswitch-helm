@@ -28,14 +28,6 @@ applicationsets:
 
       spec:
         project: default
-
-        source:
-          # Primary source (Helm chart)
-          repoURL: git@github.com:{{ github_username }}/hyperswitch-helm.git
-          targetRevision: hydrated-manifests
-          path: hydrated-manifests/test-control-center/argoapps
-          helm:
-            skipSchemaValidation: true
         sourceHydrator:
           drySource:
             repoURL: git@github.com:{{ github_username }}/hyperswitch-helm.git
