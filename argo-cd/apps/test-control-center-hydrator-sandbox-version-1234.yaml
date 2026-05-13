@@ -29,20 +29,28 @@ applicationsets:
       spec:
         project: default
 
-        sources:
+        source:
           # Primary source (Helm chart)
-          - repoURL: git@github.com:{{ github_username }}/hyperswitch-helm.git
-            targetRevision: main
+          repoURL: git@github.com:{{ github_username }}/hyperswitch-helm.git
+          targetRevision: main
+          path: hydrated-manifests/test-control-center/argoapps
+        sourceHydrator:
+          drySource:
+            repoURL: git@github.com:{{ github_username }}/hyperswitch-helm.git
             path: charts/incubator/hyperswitch-control-center
-            helm:
-              valueFiles:
-                - $values/{{ values_file }}
-
-          # Secondary source (values repo reference)
-          - repoURL: git@github.com:{{ github_username }}/hyperswitch-helm.git
             targetRevision: main
-            ref: values
-
+            helm:
+              releaseName: '{{releaseName}}'
+              # Absolute paths (prefixed with /) resolve from the repo root,
+              # replacing the $values multi-source pattern (not supported in drySource).
+              valueFiles:
+                - /infra-configurations/prod-values.yaml
+          syncSource:
+            # Hydrated manifests are pushed to this branch by the commit-server
+            # using the argocd-bitbucket-infra-push-secret (atlantis/bitbucket-creds)
+            targetBranch: hydrated-manifests
+            path: hydrated-manifests/test-control-center/argoapps
+        
         destination:
           server: https://kubernetes.default.svc
           namespace: "{{ namespace }}"
