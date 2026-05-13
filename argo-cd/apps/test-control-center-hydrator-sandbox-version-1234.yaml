@@ -1,5 +1,5 @@
-applications:
-  test-control-center-hydrator-sandbox-version-1234:
+applicationsets:
+  test-control-center-hydrator-sandbox:
 
     namespace: argocd
 
@@ -9,33 +9,52 @@ applications:
 
     project: default
 
-    # Primary source (actual deployed manifests path)
-    sources:
-      - repoURL: git@github.com:Pradesh-S/hyperswitch-helm.git
-        targetRevision: main
-        path: charts/incubator/hyperswitch-control-center
-        helm:
-          valueFiles:
-            - $values/infra-configurations/prod-values.yaml
+    generators:
+      - list:
+          elements:
+            - appName: test-control-center-hydrator-sandbox-version-12345-argo-apps
+              github_username: Pradesh-S
+              environment: sandbox
+              version: "1234"
+              namespace: hyperswitch-sandbox
+              values_file: infra-configurations/prod-values.yaml
 
-      # Secondary source (values repo reference)
-      - repoURL: git@github.com:Pradesh-S/hyperswitch-helm.git
-        targetRevision: main
-        ref: values
+    template:
+      metadata:
+        name: "{{ appName }}"
+        labels:
+          test: source-hydrator
+          environment: "{{ environment }}"
 
-    destination:
-      server: https://kubernetes.default.svc
-      namespace: hyperswitch-sandbox
+      spec:
+        project: default
 
-    syncPolicy:
-      automated:
-        prune: true
-        selfHeal: true
+        sources:
+          # Primary source (Helm chart)
+          - repoURL: git@github.com:{{ github_username }}/hyperswitch-helm.git
+            targetRevision: main
+            path: charts/incubator/hyperswitch-control-center
+            helm:
+              valueFiles:
+                - $values/{{ values_file }}
 
-      syncOptions:
-        - CreateNamespace=true
-        - ServerSideApply=true
+          # Secondary source (values repo reference)
+          - repoURL: git@github.com:{{ github_username }}/hyperswitch-helm.git
+            targetRevision: main
+            ref: values
 
-    info:
-      - name: Environment
-        value: sandbox
+        destination:
+          server: https://kubernetes.default.svc
+          namespace: "{{ namespace }}"
+
+        syncPolicy:
+          automated:
+            prune: true
+            selfHeal: true
+          syncOptions:
+            - CreateNamespace=true
+            - ServerSideApply=true
+
+        info:
+          - name: Environment
+            value: "{{ environment }}"
