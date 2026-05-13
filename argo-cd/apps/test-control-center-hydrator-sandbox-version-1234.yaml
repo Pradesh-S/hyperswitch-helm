@@ -34,7 +34,6 @@ applicationsets:
             path: charts/incubator/hyperswitch-control-center
             targetRevision: main
             helm:
-              skipSchemaValidation: true
               releaseName: '{{releaseName}}'
               # Absolute paths (prefixed with /) resolve from the repo root,
               # replacing the $values multi-source pattern (not supported in drySource).
