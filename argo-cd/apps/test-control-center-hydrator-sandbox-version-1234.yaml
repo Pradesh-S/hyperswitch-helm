@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-control-center-hydrator-sandbox-version-1234
+  namespace: argocd
+  labels:
+    test: source-hydrator
+    environment: sandbox
+spec:
+  project: default
+  source:  
+    repoURL: git@github.com:Pradesh-S/hyperswitch-helm.git
+    path: hydrated/sandbox/control-center
+    targetRevision: hydrated-manifests-sandbox-1234
+  sourceHydrator:
+    drySource:
+      repoURL: git@github.com:Pradesh-S/hyperswitch-helm.git
+      targetRevision: main
+      path: charts/incubator/hyperswitch-control-center
+      helm:
+        valueFiles:
+          - /infra-configurations/prod-values.yaml
+    syncSource:
+      targetBranch: hydrated-manifests-sandbox-1234
+      path: hydrated/sandbox/control-center
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: hyperswitch-sandbox
+
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
