@@ -1,37 +1,41 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: test-control-center-hydrator-sandbox-version-1234
-  namespace: argocd
-  labels:
-    test: source-hydrator
-    environment: sandbox
-spec:
-  project: default
-  source:  
-    repoURL: git@github.com:Pradesh-S/hyperswitch-helm.git
-    path: hydrated/sandbox/control-center
-    targetRevision: hydrated-manifests-sandbox-1234
-  sourceHydrator:
-    drySource:
-      repoURL: git@github.com:Pradesh-S/hyperswitch-helm.git
-      targetRevision: main
-      path: charts/incubator/hyperswitch-control-center
-      helm:
-        valueFiles:
-          - /infra-configurations/prod-values.yaml
-    syncSource:
-      targetBranch: hydrated-manifests-sandbox-1234
-      path: hydrated/sandbox/control-center
+applications:
+  test-control-center-hydrator-sandbox-version-1234:
 
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: hyperswitch-sandbox
+    namespace: argocd
 
-  syncPolicy:
-    automated:
-      enabled: true
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
+    additionalLabels:
+      test: source-hydrator
+      environment: sandbox
+
+    project: default
+
+    # Primary source (actual deployed manifests path)
+    sources:
+      - repoURL: git@github.com:Pradesh-S/hyperswitch-helm.git
+        targetRevision: main
+        path: charts/incubator/hyperswitch-control-center
+        helm:
+          valueFiles:
+            - $values/infra-configurations/prod-values.yaml
+
+      # Secondary source (values repo reference)
+      - repoURL: git@github.com:Pradesh-S/hyperswitch-helm.git
+        targetRevision: main
+        ref: values
+
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: hyperswitch-sandbox
+
+    syncPolicy:
+      automated:
+        prune: true
+        selfHeal: true
+
+      syncOptions:
+        - CreateNamespace=true
+        - ServerSideApply=true
+
+    info:
+      - name: Environment
+        value: sandbox
