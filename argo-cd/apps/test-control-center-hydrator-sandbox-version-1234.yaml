@@ -17,7 +17,7 @@ applicationsets:
               environment: sandbox
               version: "1234"
               namespace: hyperswitch-sandbox
-              values_file: infra-configurations/prod-values.yaml
+              values_file: infra-configurations/sandbox-values.yaml
 
     template:
       metadata:
