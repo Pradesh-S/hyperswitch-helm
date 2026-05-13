@@ -12,7 +12,7 @@ applicationsets:
     generators:
       - list:
           elements:
-            - appName: test-control-center-hydrator-sandbox-version-argo-apps
+            - appName: test-control-center-argo-apps
               github_username: Pradesh-S
               environment: sandbox
               version: "1234"
