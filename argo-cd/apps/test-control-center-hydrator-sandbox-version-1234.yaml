@@ -32,7 +32,7 @@ applicationsets:
         source:
           # Primary source (Helm chart)
           repoURL: git@github.com:{{ github_username }}/hyperswitch-helm.git
-          targetRevision: main
+          targetRevision: hydrated-manifests
           path: hydrated-manifests/test-control-center/argoapps
         sourceHydrator:
           drySource:
