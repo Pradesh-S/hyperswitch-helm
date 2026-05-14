@@ -4,12 +4,12 @@ kind: ServiceAccount
 metadata:
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: production-control-center
+    app.kubernetes.io/instance: test-control-center-argo-apps
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: production-control-center-hyperswitch-control-center
-  namespace: hyperswitch-production
+  name: test-control-center-argo-apps-hyperswitch-control-center
+  namespace: hyperswitch-sandbox
 ---
 apiVersion: v1
 data:
@@ -55,11 +55,11 @@ data:
   default__features__granularity: "false"
   default__features__is_live_mode: "false"
   default__features__live_users_counter: "false"
-  default__features__maintainence_alert: ""
+  default__features__maintainence_alert: from infra-values file - infra-configurations/prod-values.yaml
   default__features__mixpanel: "false"
   default__features__new_analytics: "true"
   default__features__new_analytics_filters: "true"
-  default__features__new_analytics_refunds: change after pr
+  default__features__new_analytics_refunds: from infra-values file - infra-configurations/prod-values.yaml
   default__features__new_analytics_smart_retries: "true"
   default__features__payout: "true"
   default__features__performance_monitor: "true"
@@ -95,24 +95,24 @@ kind: ConfigMap
 metadata:
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: production-control-center
+    app.kubernetes.io/instance: test-control-center-argo-apps
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: production-control-center-hyperswitch-control-center
-  namespace: hyperswitch-production
+  name: test-control-center-argo-apps-hyperswitch-control-center
+  namespace: hyperswitch-sandbox
 ---
 apiVersion: v1
 kind: Service
 metadata:
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: production-control-center
+    app.kubernetes.io/instance: test-control-center-argo-apps
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: production-control-center-hyperswitch-control-center
-  namespace: hyperswitch-production
+  name: test-control-center-argo-apps-hyperswitch-control-center
+  namespace: hyperswitch-sandbox
 spec:
   internalTrafficPolicy: Cluster
   ipFamilies:
@@ -129,7 +129,7 @@ spec:
       targetPort: 9000
   selector:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: production-control-center
+    app.kubernetes.io/instance: test-control-center-argo-apps
   sessionAffinity: None
   type: ClusterIP
 ---
@@ -138,12 +138,12 @@ kind: Deployment
 metadata:
   labels:
     app: hyperswitch-control-center
-    app.kubernetes.io/instance: production-control-center
+    app.kubernetes.io/instance: test-control-center-argo-apps
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/version: v1.38.2
     helm.sh/chart: hyperswitch-control-center-1.1.0
-  name: production-control-center-hyperswitch-control-center
-  namespace: hyperswitch-production
+  name: test-control-center-argo-apps-hyperswitch-control-center
+  namespace: hyperswitch-sandbox
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -151,7 +151,7 @@ spec:
   selector:
     matchLabels:
       app: hyperswitch-control-center
-      app.kubernetes.io/instance: production-control-center
+      app.kubernetes.io/instance: test-control-center-argo-apps
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -160,10 +160,10 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: d64b31166e0779aa7912a035a4d203f50e6d9839a978dc4a71ed2ae309887ed4
+        checksum/config: d7cbb30156b091a772e4a265b4bca0c3925a7a1b989a6d4c65e761f633ce1c5c
       labels:
         app: hyperswitch-control-center
-        app.kubernetes.io/instance: production-control-center
+        app.kubernetes.io/instance: test-control-center-argo-apps
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/version: v1.38.2
         helm.sh/chart: hyperswitch-control-center-1.1.0
@@ -171,7 +171,7 @@ spec:
       containers:
         - envFrom:
             - configMapRef:
-                name: production-control-center-hyperswitch-control-center
+                name: test-control-center-argo-apps-hyperswitch-control-center
           image: docker.juspay.io/juspaydotin/hyperswitch-control-center:v1.38.2
           imagePullPolicy: IfNotPresent
           lifecycle:
@@ -215,5 +215,5 @@ spec:
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
-      serviceAccountName: production-control-center-hyperswitch-control-center
+      serviceAccountName: test-control-center-argo-apps-hyperswitch-control-center
       terminationGracePeriodSeconds: 30

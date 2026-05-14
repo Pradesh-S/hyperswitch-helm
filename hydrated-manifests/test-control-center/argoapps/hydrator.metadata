@@ -1,0 +1,7 @@
+{
+  "repoURL": "git@github.com:Pradesh-S/hyperswitch-helm.git",
+  "drySha": "6508dab31453facfdf406adf1bc54bfdf3a48c9a",
+  "commands": [
+    "helm template . --name-template test-control-center-argo-apps --namespace hyperswitch-sandbox --values ./infra-configurations/prod-values.yaml --include-crds"
+  ]
+}
