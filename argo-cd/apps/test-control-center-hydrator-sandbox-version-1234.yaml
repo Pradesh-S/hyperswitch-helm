@@ -37,7 +37,7 @@ applicationsets:
               # Absolute paths (prefixed with /) resolve from the repo root,
               # replacing the $values multi-source pattern (not supported in drySource).
               valueFiles:
-                - /infra-configurations/prod-values.yaml
+                - /infra-configurations/sandbox-values.yaml
           syncSource:
             # Hydrated manifests are pushed to this branch by the commit-server
             # using the argocd-bitbucket-infra-push-secret (atlantis/bitbucket-creds)
