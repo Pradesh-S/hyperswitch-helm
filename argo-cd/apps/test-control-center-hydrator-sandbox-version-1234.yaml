@@ -41,8 +41,8 @@ applicationsets:
           syncSource:
             # Hydrated manifests are pushed to this branch by the commit-server
             # using the argocd-bitbucket-infra-push-secret (atlantis/bitbucket-creds)
-            targetBranch: hydrated-manifests
-            path: hydrated-manifests/test-control-center/argoapps
+            targetBranch: hydrated-manifests-argo
+            path: hydrated-manifests/test-control-center/argoapps-1
         
         destination:
           server: https://kubernetes.default.svc
