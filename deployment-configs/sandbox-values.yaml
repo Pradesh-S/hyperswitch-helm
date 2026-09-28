@@ -3,3 +3,4 @@ config:
       features:
         new_analytics_refunds: "from deployment-values file - deployment-configs/sandbox-values.yaml"
         maintainence_alert: "from deployment-values file - deployment-configs/sandbox-values.yaml"
+        mock_output: "false"
