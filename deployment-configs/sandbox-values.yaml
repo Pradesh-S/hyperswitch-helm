@@ -5,3 +5,4 @@ config:
         maintainence_alert: "from deployment-values file - deployment-configs/sandbox-values.yaml"
         mock_output: "false"
         test: "dadad"
+        mock_file: "true"
